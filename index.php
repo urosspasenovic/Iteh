@@ -16,6 +16,13 @@
           $_SESSION['user_id'] = $rs->fetch_assoc()['id'];
           header('Location: home.php');
           exit();
+      } else {        
+          echo '
+          <script 
+          type="text/javascript">alert("Try again :("); 
+          window.location.href = "http://localhost:8080/iteh/Prvi%20domaci/Iteh/index.php";
+          </script>';
+          exit();
       }
  }
 ?>
@@ -40,6 +47,7 @@
         <input type="password" placeholder="password" name="password" class="form-field animation a4" required>
         <button type="submit" class="login-button" name="submit">Log in</button> 
       </div>
+
     <div class="right"></div>
     </form>
   </div>
