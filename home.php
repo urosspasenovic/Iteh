@@ -216,6 +216,34 @@
         </div>
     </div>
 
- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="funkcije.js"></script>
+    <script>
+        function searchSubscription() {
+            var searchInput, modified, searchTable, tr, i, td1, td2,  txtValue1, txtValue2
+            searchInput = document.getElementById("searchSubscription");
+            modified = searchInput.value.toLowerCase();
+            searchTable = document.getElementById("subscriptionTable");
+            row = searchTable.getElementsByTagName("tr");
+           
+            for (i = 0; i < row.length; i++) {
+                col1 = row[i].getElementsByTagName("td")[1];
+                col2 = row[i].getElementsByTagName("td")[2];
+                col3 = row[i].getElementsByTagName("td")[3];
+                if (col1 || col2 || col3) {
+                    val1 = col1.textContent;
+                    val2 = col2.textContent;
+                    val3 = col3.textContent;
+                    if (val1.toLowerCase().indexOf(modified) > -1 || val2.toLowerCase().indexOf(modified) > -1 || val3.toLowerCase().indexOf(modified) > -1) {
+                        row[i].style.display = "";
+                    } else {
+                        row[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
