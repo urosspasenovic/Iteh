@@ -82,14 +82,14 @@
             <div class="col-md-4">
         
                 <button type="button" class="btn btn-primary"
-                    style="color: white; background-color: rgb(13, 101, 128);" data-toggle="modal" data-target="#addGameModal">
+                    style="color: white; background-color: rgb(13, 101, 128);" data-toggle="modal" data-target="#addSubscriptionModal">
                     <i class="bi bi-controller"></i> 
                     Add new subscription   
                 </button>
              </div>
         
             <div class="col-sm-8" style="text-align: right">
-                <button id="btnEditSubscription" class="btn " style="color: white; background-color: rgb(13, 101, 128);"
+                <button id="btnEditSubscription" name ="btnEditSubscription" class="btn " style="color: white; background-color: rgb(13, 101, 128);"
                     data-toggle="modal" data-target="#editSubscriptionModal">
                     <i class="bi bi-pen-fill"></i> 
                     Update subscription  
@@ -110,5 +110,112 @@
         </a>
     </div>
 
+    <!-- Add subsription modal -->
+    <div class="modal fade" id="addSubscriptionModal" role="dialog" >
+        <div class="modal-dialog">
+            <div class="modal-content" style="border: 3px solid rgb(2, 47, 61); background-color:rgb(2, 47, 61) ;">
+                <div class="modal-header">
+                    <h3 style="color: white; text-align:left">Add new subscription</h3>  
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <form action="#" method="post" id="addSubscriptionForm">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <input  type="text" style="border: 1px solid black" name="userId" class="form-control"
+                                           placeholder="User ID" value="<?php echo $_SESSION['user_id'] ?>" readonly/> 
+                                    </div>
+                                    <div class="form-group">
+                                        <input  type="text" style="border: 1px solid black" name="subscriptionName" class="form-control"
+                                           placeholder="Subscription name" value=""/> 
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" style="border: 1px solid black" name="maximumNumberOfAccounts" class="form-control" 
+                                        placeholder="Maximum number of Accounts" value=""/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" style="border: 1px solid black" name="subscriptionPrice" class="form-control"
+                                           placeholder="Subscription price" value=""/>
+                                    </div>
+                                </div>
+                                <div class="col-4" style="text-align: center">
+                                    <div class="form-group">
+                                        <button id="btnDodaj" type="submit" class="btn btn-success "
+                                            style="background-color: rgba(10, 65, 82, 1); border: 1px solid black;">
+                                             Add subscription
+                                        </button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-default" 
+                                            style="color: white; background-color: rgb(82, 10, 46); border: 1px solid white" 
+                                            data-dismiss="modal">Dismiss
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+<!-- Edit subsription Modal-->
+    <div class="modal fade" id="editSubscriptionModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border: 3px solid rgb(2, 47, 61); background-color:rgb(2, 47, 61) ;">
+                <div class="modal-header">
+                    <h3 style="color: white; text-align:left">Edit subscription</h3>   
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <form action="#" method="post" id="editSubscriptionForm">
+                    
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <input id="id" type="text" style="border: 1px  black" name="subscriptionId" class="form-control"
+                                           placeholder="Subscription ID" value="" readonly/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="subscriptionNameId" style="border: 1px solid black" type="text" name="subscriptionName" class="form-control"
+                                           placeholder="Game name" value=""/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="maximumNumberOfAccountsId" style="border: 1px solid black" type="number" name="maximumNumberOfAccounts" class="form-control"
+                                           placeholder="Maximum number of accounts" value=""/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="subscriptionPriceId" style="border: 1px solid black" type="number" name="subscriptionPrice" class="form-control"
+                                           placeholder="Subscription price" value=""/>
+                                    </div>
+                                </div>
+                                <div class="col-4" style="text-align: center">
+                                    <div class="form-group">
+                                        <button id="btnIzmeni" type="submit" class="btn btn-success"
+                                            style="background-color: rgba(10, 65, 82, 1); border: 1px solid black;">
+                                             Update subscription
+                                        </button>
+                                    </div>
+                                    <div class= "form-group">
+                                        <button type="button" class="btn btn-default" 
+                                        style="color: white; background-color: rgb(82, 10, 46); border: 1px solid white" 
+                                        data-dismiss="modal">Dismiss
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+  
+            </div>
+
+        </div>
+    </div>
+
+ 
 </body>
 </html>
